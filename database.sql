@@ -16,8 +16,18 @@ CREATE TABLE IF NOT EXISTS file_manutenzione (
   tipo_file VARCHAR(50),
   FOREIGN KEY (id_macchinario) REFERENCES macchinari(id)
 );
+CREATE TABLE UTENTE (
+    ID INTEGER PRIMARY KEY AUTO_INCREMENT,
+    USERNAME VARCHAR(255),
+    PASSWORD VARCHAR(255),
+    NOME VARCHAR(255),
+    COGNOME VARCHAR(255)
+);
 
 INSERT INTO macchinari (nome, descrizione) VALUES
 ('Macchinario 1', 'Descrizione del macchinario 1');
+INSERT INTO UTENTE (USERNAME, PASSWORD, NOME, COGNOME) VALUES
+('admin', '1a01b60f1adf59e6cc9349e49d68d6b9', 'Claudio', 'Chigioni'),
+('admin2', '1a01b60f1adf59e6cc9349e49d68d6b9', 'Silvia', 'Arnoldi');
 
 -- Per test carica qualche file dopo upload
